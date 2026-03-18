@@ -1,5 +1,6 @@
+'use client';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useQuery, useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { QUERY_ME } from '../utils/queries';

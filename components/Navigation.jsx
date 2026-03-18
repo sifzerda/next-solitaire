@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Auth from '../utils/auth';
 import '../App.css';
 
 function Navigation() {
-  const currentPage = useLocation().pathname;
+  const currentPage = usePathname();
   const isLoggedIn = Auth.loggedIn();
 
     // Function to determine active class based on current page
@@ -19,7 +20,7 @@ function Navigation() {
       return (
         <React.Fragment>
           <li className="nav-item">
-          <Link to="/profile" className={isActive('/profile')}>
+          <Link href="/profile" className={isActive('/profile')}>
               Profile
             </Link>
           </li>
